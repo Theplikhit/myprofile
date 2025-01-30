@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ค้นหาและแก้ไขข้อมูล</title>
+</head>
+<body>
+    <h1>ค้นหาและแก้ไขข้อมูล</h1>
+
+    <form action="search" method="get">
+        <label for="query">ค้นหาชื่อ:</label>
+        <input type="text" id="query" name="query" placeholder="กรอกชื่อที่ต้องการค้นหา" required>
+        <button type="submit">ค้นหา</button>
+    </form>
+
+    <hr>
+    <h2>ผลลัพธ์การค้นหา</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ชื่อ</th>
+                <th>อีเมล</th>
+                <th>เบอร์โทร</th>
+                <th>การดำเนินการ</th>
+            </tr>
+            <tr>
+    <td>${name}</td>
+    <td>${email}</td>
+    <td>${phone}</td>
+    <td>
+        <a href="edit?id=${name}">แก้ไข</a> |
+        <a href="delete?id=${name}">ลบ</a>
+    </td>
+</tr>
+        </thead>
+        <tbody>
+            <!-- ข้อมูลจะถูกเติมโดย SearchServlet -->
+        </tbody>
+    </table>
+
+    <a href="mainpage.html">กลับหน้าหลัก</a>
+</body>
+</html>
